@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import Comment from "../models/comment.js";
+import Comment from "../models/Comment.js";
 
 router.post("/", async (req, res) => {
   try {
