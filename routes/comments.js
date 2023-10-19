@@ -23,17 +23,12 @@ router.get("/", async (req, res) => {
 
 router.get("/:url", async (req, res) => {
   try {
-    console.log("1")
     const comments = await Comment.find({'url': req.params.url})
     console.log(req.params.url)
     console.log(comments)
-    console.log("2")
     res.status(200).json(comments);
-    console.log("3")
   } catch(err) {
-    console.log("4")
     res.status(500).json(err);
-    console.log("5")
   }
 })
 
