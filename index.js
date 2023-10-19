@@ -1,12 +1,13 @@
 import express from "express";
 import { config } from "dotenv";
 import mongoose, { connect } from "mongoose";
+import cors from 'cors';
 
 import commentsRoute from "./routes/comments.js"
 
 config();
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use("/api/comments", commentsRoute)
 
